@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Birthday Surprise</title>
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <link icon="stylesheet" href="image.png">
+        </head>
+        <body>
+
+            <div id="chatPage" class="card">
+                <h2>Hey Bestie💌</h2>
+                <p>I made something special for you.</p>
+                <button onclick="startApp()">Continue</button>
+            </div>
+
+            <!--PASSWORD PAGE-->
+            <div id="passwordPage"  class="card hidden">
+                <h2>Enter Secret Code 🎁</h2>
+                <input type="text" id="secretCode" placeholder="Enter birthday MMDD">
+                
+                <button id="yesBtn">Yes ❤</button>
+                <audio id="voiceNote" src="voice.mp3"></audio>
+                </div>
+
+                <!--MAIN PAGE-->
+                <div id="media"  style="display:none;">
+                    <h1>🎉Happy Birthday Bestie🎂 </h1>
+                    <img src="photo.png"width="250">
+                    <br><br>
+
+                   <video width="300" controls>
+                    <source src="video.mp4" type="video/mp4"></video>
+                
+                        <p>You are an amazing friend and am gratefullfor you💖</p>
+                    
+                </div>
+                <script>
+                    const media = document.getElementById("media");
+                    const yesBtn=document.getElementById("yesBtn");
+                    const voice=document.getElementById("voiceNote");
+
+                    let clickCount=0;
+                    yesBtn.addEventListener("click", function(){
+                        clickCount++;
+
+                        if(clickCount <2){
+                            //MOVE BUTTON TO RANDOM POSITION
+                            const x = Math.random() * (window.innerWidth-yesBtn.offsetWidth);
+                            const y = Math.random() * (window.innerHeight-yesBtn.offsetHeight);
+                        
+                            yesBtn.style.position= "absolute";
+                            yesBtn.style.left= x + "px";
+                            yesBtn.style.top= y + "px";
+                        }else{
+                            voice.play();
+                            alert("You got me!🎉");
+                        }
+                    });
+                    //When voice note ends, show photo and video
+                    voice.addEventListener("ended",function(){
+                        media.style.display="block";
+                    });
+                </script>
+
+        </body>
+
+
+                        
+
+
+
+        </html>
+

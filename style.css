@@ -1,0 +1,36 @@
+body{
+    font-family: arial;
+    background: #ffd6e7;
+    text-align: center;
+    padding-top: 100px;
+    
+}
+.card{
+    background: white;
+    padding: 30px;
+    border-radius:10px;
+    width: 650px;
+    margin:auto;
+    
+}
+
+button{
+padding: 10px 20px;
+border:none;
+border-radius:10px;
+font-size:16px;
+cursor: pointer;
+margin-top:10px;
+background: hotpink;
+
+}
+
+input{
+    padding: 10px;
+    width: 80%;
+    margin-top: 10px;
+}
+.hidden{
+    display: none;
+}
+
